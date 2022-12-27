@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class ToDoCard extends StatelessWidget {
-  final String taskName;
+class Card extends StatelessWidget {
+  final String todo;
   final bool completed;
 
   Function(bool?)? onChanged;
-  Function()? deleteTask;
+  Function()? deleteTodo;
 
-  ToDoCard(
+  Card(
       {super.key,
-      required this.taskName,
+      required this.todo,
       required this.completed,
       required this.onChanged,
-      required this.deleteTask});
+      required this.deleteTodo});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(19.0),
       child: GestureDetector(
-        onDoubleTap: deleteTask,
+        onDoubleTap: deleteTodo,
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
@@ -32,7 +32,7 @@ class ToDoCard extends StatelessWidget {
                 children: [
                   Checkbox(value: completed, onChanged: onChanged),
                   Text(
-                    taskName,
+                    todo,
                     style: TextStyle(
                         decoration: completed
                             ? TextDecoration.lineThrough
@@ -40,7 +40,7 @@ class ToDoCard extends StatelessWidget {
                   ),
                 ],
               ),
-              Text("Double tab to remove",
+              Text("Double tab to delete task",
                   style: TextStyle(color: Colors.black.withOpacity(0.3)))
             ],
           ),
