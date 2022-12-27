@@ -24,7 +24,7 @@ class Card extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-              color: Colors.blueAccent,
+              color: Colors.green,
               borderRadius: BorderRadius.circular(15)),
           child: Column(
             children: [
@@ -41,7 +41,7 @@ class Card extends StatelessWidget {
                 ],
               ),
               Text("Double tab to delete task",
-                  style: TextStyle(color: Colors.black.withOpacity(0.3)))
+                  style: TextStyle(color: Colors.grey.withOpacity(0.3)))
             ],
           ),
         ),
